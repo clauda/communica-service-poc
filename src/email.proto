@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package communication.email;
+
+service EmailService {
+  rpc send(EmailMessage) returns (Empty) {}
+}
+
+message Empty {}
+
+message EmailMessage {
+  string email = 1;
+  string templateId = 2;
+  string eventCode = 3;
+}
